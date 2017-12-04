@@ -36,7 +36,9 @@ def main_input():
     exp_final = exp_mul[0]
     for i in exp_mul[1:]:
         exp_final  = adder(exp_final,i)
-    #print exp_final
+
+    print "Stage 1.1 - Expression Generation"
+    print exp_final ,'\n'*10
 
     var = []
     for i in range(len(input_var)):
@@ -50,7 +52,10 @@ def main_input():
             e.append(i)
         algos_input.append(e)
 
-    #print algos_input
+    
+    print "Stage 1.2 - Cube generation from expression"
+    print algos_input ,'\n'*10
+
 
     output_exp = []
 
@@ -62,6 +67,10 @@ def main_input():
             #print i,algo(algos_input[i])
             output_exp.append(algo(algos_input[i]))
 
+    print "Stage 2 - Minimisation of expression (cubes)"
+    print output_exp ,'\n'*10
+
+    print "Stage 3 - Verilog File generation"
     out(input_var,output_exp,size,total_size)
 
 main_input()

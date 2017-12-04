@@ -93,7 +93,7 @@ def out(input_var, input_exp,size,total_size):
 
     maxSize = len(input_exp)
 
-    line = "output [" + str(maxSize) + ":0]" + " out;"
+    line = "output [" + str(maxSize-1) + ":0]" + " out;"
     print line
     F.write(line + "\n")
 
