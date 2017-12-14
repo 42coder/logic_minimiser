@@ -1,88 +1,34 @@
 # Optimised Implementation of Logic Functions
 
-The aim of the project is to implement a Boolean logic minimization algorithm than can take multi bit expressions as inputs and generate a structural verilog code of the minimised expression as an output. The code is written in python and does not require any external dependencies to be run.
+This is a python based program that can be used to minimize multi-bit input expressions. The code does this by first expanding each multiplication and addition and then reducing the expression for each of the bits generated. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The code is written in python and does not require any external dependencies other than a Python interpreter.
 
-### Prerequisites
+A link to our project report can be found [here](https://drive.google.com/open?id=19p2KjeI9Yep3EquI8GEGlSfuSY2_oTeh).
 
-What things you need to install the software and how to install them
+### Using the Optimizer
 
+To run the optimizer you will need to run the file *ds_mainInput.py*.
+
+Then for giving the inputs we do
 ```
-Give examples
+Enter the variable names:	abc
+Enter the size of a		2
+Enter the size of b		3
+Enter the size of c		1
+Enter the Boolean Expression:	abc+a
 ```
+Where a, b and c are the variable names that we are going to use. 
 
-### Installing
+### Working of the Optimizer
 
-A step by step series of examples that tell you have to get a development env running
+Since ‘a’ is of size 2 in the above example, it is treated as a sequence of bits named a0 and a1. In the code, the index 0 is treated as the LSB. 
 
-Say what the step will be
+The optimizer, to show its working, prints the expression generated when it expands the expression bitwise and its respective cubes, the minimised expression of each bit and the corresponding verilog files generated. It also generates .txt files for each verilog file to be generated.
 
-```
-Give the example
-```
+### Fixes and Improvements
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* A heuristic algorithm (like the [Espresso logic minimizer](https://en.wikipedia.org/wiki/Espresso_heuristic_logic_minimizer)) could be used to speed up the program.
 
